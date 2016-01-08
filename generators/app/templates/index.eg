@@ -1,0 +1,8 @@
+
+main{*match} =
+   {@, options = {=}} when @is-quaint-engine ->
+      install{@, options}
+   {options = {=}} ->
+      {@} -> main{@, options}
+
+provide = main
