@@ -8,7 +8,7 @@ module.exports = yeoman.generators.Base.extend({
     var done = this.async();
 
     this.log(yosay(
-      'Let us write a package in ' + chalk.green('Earl Grey')
+      'Let us write a ' + chalk.green('Quaint') + ' plugin!'
     ));
 
     var prompts = [

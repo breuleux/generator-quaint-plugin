@@ -1,4 +1,8 @@
 
+install{@, options} =
+   ;; Plugin code goes here.
+   pass
+
 main{*match} =
    {@, options = {=}} when @is-quaint-engine ->
       install{@, options}
