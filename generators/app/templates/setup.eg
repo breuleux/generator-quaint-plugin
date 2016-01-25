@@ -1,0 +1,16 @@
+
+require:
+   inquirer-promise as inq
+   chalk
+
+
+async quaint-setup{config, instructions} =
+   url = "https://github.com/<%= username %>/<%= name %>"
+   print 'Plugin documentation: {chalk.bold.cyan{url}}'
+
+   data = config.plugins["<%= name2 %>"] or= {=}
+
+   ;; data.thing = await inq.input{"Something", {default = "whatever"}}
+
+
+provide = quaint-setup

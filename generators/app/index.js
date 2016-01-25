@@ -48,6 +48,7 @@ module.exports = yeoman.generators.Base.extend({
     ];
 
     this.prompt(prompts, function (props) {
+      props.name2 = props.name.replace(/^quaint-/, "");
       this.props = props;
       // To access props later use this.props.someOption;
 
@@ -60,6 +61,15 @@ module.exports = yeoman.generators.Base.extend({
       this.fs.copy(
         this.templatePath('index.eg'),
         this.destinationPath('src/index.eg')
+      );
+      this.fs.copyTpl(
+        this.templatePath('setup.eg'),
+        this.destinationPath('src/setup.eg'),
+        this.props
+      );
+      this.fs.copy(
+        this.templatePath('quaint-setup.js'),
+        this.destinationPath('quaint-setup.js')
       );
       this.fs.copy(
         this.templatePath('mocha.opts'),

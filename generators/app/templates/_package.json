@@ -12,12 +12,14 @@
   "license": "<%= license %>",
   "main": "./lib/index.js",
   "dependencies": {
-    "earlgrey-runtime": ">=0.0.11"
+    "chalk": "^1.1.1",
+    "earlgrey-runtime": ">=0.0.11",
+    "inquirer-promise": ">=0.0.3"
   },
   "devDependencies": {
     "earlgrey": ">=0.0.13",
     "mocha": "^2.2.1",
-    "quaint": ">=0.0.13",
+    "quaint": ">=0.0.15",
     "earl-mocha": ">=0.0.3"
   },
   "scripts": {
