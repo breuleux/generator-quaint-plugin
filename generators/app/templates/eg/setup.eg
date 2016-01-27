@@ -4,13 +4,14 @@ require:
    chalk
 
 
-async quaint-setup{config, instructions} =
+async quaint-setup(config, instructions) =
    url = "https://github.com/<%= username %>/<%= name %>"
-   print 'Plugin documentation: {chalk.bold.cyan{url}}'
+   print 'Plugin documentation: {chalk.bold.cyan(url)}'
 
    data = config.plugins["<%= name2 %>"] or= {=}
 
-   ;; data.thing = await inq.input{"Something", {default = "whatever"}}
+   ;; Configure the plugin using inq.input, inq.confirm, inq.list, and so on.
+   ;; data.thing = await inq.input("Something", {default = "whatever"})
 
 
 provide = quaint-setup

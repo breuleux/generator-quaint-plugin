@@ -1,12 +1,14 @@
 
-install{@, options} =
+install(@, options) =
    ;; Plugin code goes here.
+   ;; TIP: you can test your plugin with the command:
+   ;; quaint -p ./lib -e 'code that uses your custom rule or macro'
    pass
 
-main{*match} =
+main(*match) =
    {@, options = {=}} when @is-quaint-engine ->
-      install{@, options}
+      install(@, options)
    {options = {=}} ->
-      {@} -> main{@, options}
+      {@} -> main(@, options)
 
 provide = main
