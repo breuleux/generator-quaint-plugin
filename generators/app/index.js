@@ -13,6 +13,14 @@ module.exports = yeoman.generators.Base.extend({
 
     var prompts = [
       {
+        type: 'list',
+        name: 'language',
+        message: 'In what language are you writing this plugin?',
+        choices: ["JavaScript", "Earl Grey"],
+        default: "JavaScript",
+        store: true
+      },
+      {
         type: 'input',
         name: 'username',
         message: 'What is your GitHub username?',
@@ -50,56 +58,65 @@ module.exports = yeoman.generators.Base.extend({
     this.prompt(prompts, function (props) {
       props.name2 = props.name.replace(/^quaint-/, "");
       this.props = props;
-      // To access props later use this.props.someOption;
-
       done();
     }.bind(this));
   },
 
   writing: {
     app: function () {
+
       this.fs.copy(
-        this.templatePath('index.eg'),
-        this.destinationPath('src/index.eg')
+          this.templatePath('quaint-setup.js'),
+          this.destinationPath('quaint-setup.js')
       );
       this.fs.copyTpl(
-        this.templatePath('setup.eg'),
-        this.destinationPath('src/setup.eg'),
-        this.props
+          this.templatePath('README.md'),
+          this.destinationPath('README.md'),
+          this.props
       );
-      this.fs.copy(
-        this.templatePath('quaint-setup.js'),
-        this.destinationPath('quaint-setup.js')
-      );
-      this.fs.copy(
-        this.templatePath('mocha.opts'),
-        this.destinationPath('test/mocha.opts')
-      );
-      this.fs.copy(
-        this.templatePath('test.eg'),
-        this.destinationPath('test/test.eg')
-      );
-      this.fs.copyTpl(
-        this.templatePath('_package.json'),
-        this.destinationPath('package.json'),
-        this.props
-      );
-      this.fs.copyTpl(
-        this.templatePath('README.md'),
-        this.destinationPath('README.md'),
-        this.props
-      );
+
+      if (this.props.language === "JavaScript") {
+
+      }
+      else if (this.props.language === "Earl Grey") {
+          this.fs.copy(
+              this.templatePath('eg/index.eg'),
+              this.destinationPath('src/index.eg')
+          );
+          this.fs.copyTpl(
+              this.templatePath('eg/setup.eg'),
+              this.destinationPath('src/setup.eg'),
+              this.props
+          );
+          this.fs.copy(
+              this.templatePath('eg/mocha.opts'),
+              this.destinationPath('test/mocha.opts')
+          );
+          this.fs.copy(
+              this.templatePath('eg/test.eg'),
+              this.destinationPath('test/test.eg')
+          );
+          this.fs.copyTpl(
+              this.templatePath('eg/_package.json'),
+              this.destinationPath('package.json'),
+              this.props
+          );
+      }
     },
 
     projectfiles: function () {
-      this.fs.copy(
-        this.templatePath('gitignore'),
-        this.destinationPath('.gitignore')
-      );
-      this.fs.copy(
-        this.templatePath('npmignore'),
-        this.destinationPath('.npmignore')
-      );
+      if (this.props.language === "JavaScript") {
+      }
+      else if (this.props.language === "Earl Grey") {
+          this.fs.copy(
+              this.templatePath('eg/gitignore'),
+              this.destinationPath('.gitignore')
+          );
+          this.fs.copy(
+              this.templatePath('eg/npmignore'),
+              this.destinationPath('.npmignore')
+          );
+      }
     }
   },
 
