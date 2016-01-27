@@ -12,6 +12,8 @@ Generate scaffolding for a Quaint plugin written in Earl Grey.
 You may write your plugin in JavaScript, or in
 [Earl Grey](http://earl-grey.io).
 
+[Relevant documentation.](http://breuleux.github.io/quaint/plugins/write.html)
+
 
 ## JavaScript 
 
