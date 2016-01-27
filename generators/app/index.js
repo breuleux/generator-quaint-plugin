@@ -76,7 +76,20 @@ module.exports = yeoman.generators.Base.extend({
       );
 
       if (this.props.language === "JavaScript") {
-
+          this.fs.copy(
+              this.templatePath('js/index.js'),
+              this.destinationPath('lib/index.js')
+          );
+          this.fs.copyTpl(
+              this.templatePath('js/setup.js'),
+              this.destinationPath('lib/setup.js'),
+              this.props
+          );
+          this.fs.copyTpl(
+              this.templatePath('js/_package.json'),
+              this.destinationPath('package.json'),
+              this.props
+          );
       }
       else if (this.props.language === "Earl Grey") {
           this.fs.copy(
@@ -106,6 +119,14 @@ module.exports = yeoman.generators.Base.extend({
 
     projectfiles: function () {
       if (this.props.language === "JavaScript") {
+          this.fs.copy(
+              this.templatePath('js/gitignore'),
+              this.destinationPath('.gitignore')
+          );
+          this.fs.copy(
+              this.templatePath('js/npmignore'),
+              this.destinationPath('.npmignore')
+          );
       }
       else if (this.props.language === "Earl Grey") {
           this.fs.copy(

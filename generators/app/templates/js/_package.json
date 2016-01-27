@@ -1,0 +1,21 @@
+{
+  "name": "<%= name %>",
+  "description": "<%= description %>",
+  "version": "0.0.0",
+  "format": "cjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<%= username %>/<%= name %>"
+  },
+  "keywords": ["quaint", "quaint-plugin"],
+  "author": "<%= author %>",
+  "license": "<%= license %>",
+  "main": "./lib/index.js",
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "inquirer-promise": ">=0.0.3"
+  },
+  "devDependencies": {
+    "quaint": ">=0.0.15"
+  }
+}
