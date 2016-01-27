@@ -14,8 +14,10 @@ Resulting directory structure:
       .gitignore
       .npmignore
       package.json
+      quaint-setup.js
       src
         index.eg
+        setup.eg
       test
         mocha.opt
         test.eg
