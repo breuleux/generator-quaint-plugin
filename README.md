@@ -3,10 +3,34 @@
 
 Generate scaffolding for a Quaint plugin written in Earl Grey.
 
+
 ## Usage
 
     npm install -g generator-quaint-plugin
     yo quaint-plugin
+
+You may write your plugin in JavaScript, or in
+[Earl Grey](http://earl-grey.io).
+
+
+## JavaScript 
+
+Resulting directory structure:
+
+    quaint-my-plugin
+      .gitignore
+      .npmignore
+      package.json
+      quaint-setup.js
+      lib
+        index.js
+        setup.js
+
+* `index.js` contains the plugin code
+* `setup.js` contains the code to configure the plugin interactively
+
+
+## Earl Grey
 
 Resulting directory structure:
 
@@ -22,9 +46,14 @@ Resulting directory structure:
         mocha.opt
         test.eg
 
-## Commands
+* `index.eg` contains the plugin code
+* `setup.eg` contains the code to configure the plugin interactively
 
-The following commands are defined for convenience:
+
+### Commands
+
+In an Earl Grey project, the following commands are defined for
+convenience:
 
 To compile the project to JS:
 
