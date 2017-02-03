@@ -1,5 +1,5 @@
 
-var inq = require("inquirer-promise");
+var inq = require("inquirer-shortcuts");
 var chalk = require("chalk");
 
 function quaintSetup(config, instructions) {

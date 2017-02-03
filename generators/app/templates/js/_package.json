@@ -12,10 +12,10 @@
   "license": "<%= license %>",
   "main": "./lib/index.js",
   "dependencies": {
-    "chalk": "^1.1.1",
-    "inquirer-promise": ">=0.0.3"
+    "chalk": "^1.1.3",
+    "inquirer-shortcuts": "^1.1.0"
   },
   "devDependencies": {
-    "quaint": ">=0.0.15"
+    "quaint": "^0.1.0"
   }
 }
