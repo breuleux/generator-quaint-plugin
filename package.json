@@ -1,6 +1,6 @@
 {
   "name": "generator-quaint-plugin",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Generate scaffolding for a Quaint plugin.",
   "license": "MIT",
   "main": "app/index.js",
